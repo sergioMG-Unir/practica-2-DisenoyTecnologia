@@ -1,0 +1,37 @@
+<div class="container">
+    <h1>Comprueba el nombre de los items de la lista</h1>
+    <ul class="list-group">
+      <li class="list-group-item" 
+        *ngFor="let numero of listaNumeros">
+        {{ numero.titulo}}
+      </li>
+    </ul>
+<br>
+    <br>
+    <h2>Añade un nuevo número a la lista con este formulario</h2> 
+    <br>
+
+    <form (ngSubmit)="addNewNumero()" #numberForm="ngForm">
+      <p> Recuerda que debes rellenar todos los campos</p>
+      <div class="form-group">
+        <label for="titulo">Titulo</label>
+        <input type="text" class="form-control" id="titulo" name="titulo"
+          [(ngModel)]="newNumero.titulo" required>
+      </div>
+      <div class="form-group">
+        <label for="contenido">Contenido</label>
+        <input type="text" class="form-control" id="contenido" name="contenido" 
+          [(ngModel)]="newNumero.contenido" required>
+      </div>
+      <div class="form-group">
+        <label for="digito">Digito</label>
+        <input type="text" class="form-control" id="digito" name="digito" 
+          [(ngModel)]="newNumero.digito" required>
+      </div>
+      <br>
+      <button type="submit" class="btn btn-primary" 
+        [disabled]="!numberForm.form.valid">Añadir número</button>
+    </form>
+<br><br>
+<p> comprueba  <a class="link" routerLinkActive="active" routerLink="/">aquí</a> la lista de números añadida</p>
+</div>

@@ -1,0 +1,21 @@
+  <div class="container">
+    <h1>Lista de números</h1>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Titulo</th>
+          <th>Contenido</th>
+          <th>Digito</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let numero of listaNumeros">
+          <td>{{ numero.titulo }}</td>
+          <td>{{ numero.contenido }}</td>
+          <td>{{ numero.digito }}</td>
+        </tr>
+      </tbody>
+    </table>
+    <button class="btn btn-primary mt-3" 
+    (click)="getPractica()">Ver listado de números</button>
+  </div>
